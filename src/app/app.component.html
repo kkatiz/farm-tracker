@@ -1,0 +1,57 @@
+
+<body>
+<main>
+  <div class="container py-4">
+    <header class="pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-tree-fill" viewBox="0 0 16 16">
+          <path d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5z"/>
+        </svg>
+          <span class="fs-4">Farm Tracker</span>
+      </a>
+    </header>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">Welcome to Farm Tracker by Kati</h1>
+        <div class="col-md-8 fs-4">
+            <p class="text-muted">view my <a href="https://stackoverflow.com/questions/26951488/how-do-i-keep-my-text-and-my-link-on-the-same-line-in-html">Github</a> source code </p>
+            <span>Get started by creating your tracker, click button below</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-arrow-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+          </svg>
+        </div>
+        <div class="mt-2 ml-3">
+          <button class="btn btn-primary btn-lg" type="button" (click)="showCreate=!showCreate">Create Tracker</button>
+        </div>
+        <app-create-tracker *ngIf="showCreate" (trackerCreated)="handleTrackerCreated($event)"></app-create-tracker>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+    <app-tracker-body
+    *ngFor="let Tracker of Trackers | async"
+    [Place]="Tracker.Place"
+    [ImageURL]="Tracker.ImageURL"
+    (click)="setActivePoll(Tracker)"
+    ></app-tracker-body>
+  </div>
+    <app-tracker-detail class="col-8"
+    *ngIf="activePoll"
+      [id]="activePoll.id"
+      [Place]="activePoll.Place"
+      [Overall]="activePoll.Overall"
+      [Age]="activePoll.Age"
+      [Type]="activePoll.Type"
+      [Medicalhistory1]="activePoll.Medicalhistory1"
+      ></app-tracker-detail>
+
+</div>
+    <footer class="pt-3 mt-4 text-muted border-top">
+      &copy; 2021
+      <span>by Kati</span>
+    </footer>
+  </div>
+</main>
+  </body>
+

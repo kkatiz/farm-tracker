@@ -1,0 +1,36 @@
+<form
+[formGroup]="TrackerForm"
+(ngSubmit)="submitForm()"
+class="row g-3 mt-2">
+  <div class="col-md-6">
+    <label class="form-label">Place</label>
+    <input type="text" class="form-control" formControlName="Place">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">ImageURL</label>
+    <input type="text" class="form-control" formControlName="ImageURL">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Age</label>
+    <input type="text" class="form-control" formControlName="Age">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Type</label>
+    <input type="text" class="form-control" formControlName="Type">
+  </div>
+  <div class="col-12">
+    <label class="form-label">Medical history</label>
+    <input type="text" class="form-control" formControlName="Medicalhistory1">
+  </div>
+  <div class="col-md-6">
+    <label>Overall</label>
+    <div class="input-group mt-2">
+      <input type="text" class="form-control" formControlName="Overall">
+      <div class="input-group-text">%</div>
+    </div>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-dark">Submit Tracker</button>
+  </div>
+
+</form>

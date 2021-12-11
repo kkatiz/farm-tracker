@@ -1,0 +1,115 @@
+[
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_trackerid",
+				"type": "uint256"
+			}
+		],
+		"name": "Trackercreated",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_Place",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_ImageURL",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_Age",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "_Type",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_Medicalhistory1",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_Overall",
+				"type": "uint256"
+			}
+		],
+		"name": "createTracker",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTotalTracker",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_trackerid",
+				"type": "uint256"
+			}
+		],
+		"name": "getTracker",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
